@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer</title>
+<script defer src="main.js"></script></head>
+<body>
+  <div class="container">
+    <h1>Pomodoro Timer</h1>
+    
+    <div class="timer-display">
+      <div class="timer-circle">
+        <div class="progress-ring">
+          <svg height="300" width="300">
+            <circle class="progress-ring__circle" stroke="#ddd" stroke-width="8" fill="transparent" r="120" cx="150" cy="150"/>
+            <circle class="progress-ring__circle-progress" stroke="#ff6347" stroke-width="8" fill="transparent" r="120" cx="150" cy="150"/>
+          </svg>
+          <div class="timer-text">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
+          </div>
+        </div>
+      </div>
+      <div class="mode-indicator">
+        <span id="current-mode">WORK</span>
+        <span id="session-count">Session 1/4</span>
+      </div>
+    </div>
+    
+    <div class="controls">
+      <button id="start-btn" class="btn">Start</button>
+      <button id="pause-btn" class="btn" disabled>Pause</button>
+      <button id="reset-btn" class="btn">Reset</button>
+    </div>
+    
+    <div class="settings">
+      <h2>Settings</h2>
+      <div class="settings-grid">
+        <div class="setting-item">
+          <label for="work-duration">Work Duration (minutes):</label>
+          <input type="number" id="work-duration" min="1" max="60" value="25">
+        </div>
+        <div class="setting-item">
+          <label for="break-duration">Short Break Duration (minutes):</label>
+          <input type="number" id="break-duration" min="1" max="30" value="5">
+        </div>
+        <div class="setting-item">
+          <label for="long-break-duration">Long Break Duration (minutes):</label>
+          <input type="number" id="long-break-duration" min="5" max="60" value="15">
+        </div>
+        <div class="setting-item">
+          <label for="notification-sound">Notification Sound:</label>
+          <select id="notification-sound">
+            <option value="bell">Bell</option>
+            <option value="chime">Chime</option>
+            <option value="alert">Alert</option>
+          </select>
+        </div>
+      </div>
+      <button id="save-settings" class="btn">Save Settings</button>
+    </div>
+    
+    <div class="task-list-container">
+      <h2>Task List</h2>
+      <div class="task-input">
+        <input type="text" id="task-input" placeholder="Add a new task...">
+        <button id="add-task-btn" class="btn">Add</button>
+      </div>
+      <ul id="task-list" class="task-list"></ul>
+    </div>
+  </div>
+</body>
+</html>
+
